@@ -12,7 +12,7 @@ body{
 }
   
 #timer {
-  color: #219EBC;
+  color: #eeeeee;
   text-align: center;
   text-transform: uppercase;
   font-family: 'Lato', sans-serif;
@@ -20,7 +20,7 @@ body{
   letter-spacing: 5px;
 }
 
-.days, .hours, {
+.days, .hours, .minutes, .seconds {
   display: inline-block;
   padding: 20px;
   width: 100px;
@@ -28,18 +28,16 @@ body{
 }
 
 .days {
-  background: #8DCAE6;
+  background: #219EBC;
 }
 
 .hours {
-  background: #8DCAE6;
- }
-
-
+  background: #219EBC;
+}
 
 .numbers {
   font-family: 'Montserrat', sans-serif;
-  color:  #ffffff;
+  color:  #8DCAE6;
   font-size: 4em;
   text-align: center;
 }
@@ -85,8 +83,6 @@ body{
         <div id="days" class="numbers "> </div>days</div> 
       <div class="hours"> 
         <div  id="hours" class="numbers"> </div>hours</div> 
-      
-      
       </div>
 
 </div>
@@ -94,7 +90,7 @@ body{
 </body>
 <script>
     const year = new Date().getFullYear();
-const myDate = new Date('February 23, 2025 00');
+const myDate = new Date('Feb 23, 2025 00:00:00');
 console.log(myDate);
 
 // countdown
@@ -109,12 +105,11 @@ let timer = setInterval(function() {
   // math
   let days = Math.floor(diff / (1000 * 60 * 60 * 24));
   let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
- 
+
   // display
   document.getElementById("days").innerHTML=days
   document.getElementById("hours").innerHTML=hours
-  
-  
+  document.getElementById("minutes").innerHTML=minutes
 
 
 }, 1);
